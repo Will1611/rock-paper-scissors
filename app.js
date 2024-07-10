@@ -1,8 +1,11 @@
 "use strict";
 
+// Variables
+const btnPlay = document.querySelector(`.btn-play`);
 let humanScore = 0;
 let computerScore = 0;
 
+//Functions
 const getHumanChoice = function () {
   let humanChoice = prompt("Enter rock, paper or scissors:").toLowerCase();
   humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1);
@@ -72,11 +75,18 @@ const playGame = function () {
     computerScore = 0;
   } else {
     console.log(
-      `\nComputer wins the game! \nRefresh the browser to play again.`
+      `\nComputer wins the game! \nRefresh the browser and press the button to play again.`
     );
     humanScore = 0;
     computerScore = 0;
   }
 };
 
-// playGame();
+const startGame = function () {
+  btnPlay.addEventListener(`click`, function () {
+    playGame();
+  });
+};
+
+// Run code
+startGame();

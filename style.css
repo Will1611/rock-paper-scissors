@@ -6,4 +6,35 @@
 
 body {
   background-color: deeppink;
+  padding: 40px 50px;
+  font-family: sans-serif;
+  color: #1e471e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  color: #1e471e;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+img {
+  max-height: 300px;
+  max-width: auto;
 }
