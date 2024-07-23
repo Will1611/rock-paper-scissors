@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +8,8 @@
 
 body {
   background: linear-gradient(to bottom, azure, deeppink);
-  font-family: sans-serif;
-  color: #1e471e;
+  font-family: "Roboto", sans-serif;
+  color: #241e47;
   height: 100vh;
 }
 
@@ -18,7 +20,7 @@ body {
   max-width: 80%;
   height: 100%;
   margin: 0 auto;
-  background-color: aqua;
+  padding: 20px 0;
 }
 
 .player-1-div,
@@ -30,11 +32,7 @@ body {
 }
 
 .player-1-div {
-  background-color: yellowgreen;
-}
-
-.computer-div {
-  background-color: orangered;
+  margin-bottom: 100px;
 }
 
 header,
@@ -44,26 +42,56 @@ main {
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 4rem;
 }
 
 h2 {
   margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 50px;
 }
 
-.star-div,
+h3 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.star-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .rps-icon-div {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.star {
+/* .star {
   max-height: 50px;
   max-width: 50px;
+} */
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #241e47;
+  cursor: pointer;
 }
 
-.icon-rps {
-  max-height: 50px;
-  max-width: 50px;
+/* .icon-rps {
+  max-height: 100px;
+  max-width: 100px;
+  cursor: pointer;
+}
+ */
+/* .rps-icon-div object {
+  max-height: 100px;
+  max-width: 100px;
+  cursor: pointer;
+} */
+
+.score {
+  font-size: 4rem;
 }
