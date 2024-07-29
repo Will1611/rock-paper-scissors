@@ -11,30 +11,46 @@
     <div class="overlay">
       <div class="overlay-container">
         <h1>Ready to play?</h1>
-        <button>Start game</button>
+        <button class="btn-overlay">Start game</button>
       </div>
     </div>
     <div class="container">
       <header>
         <h1>Rock Paper Scissors</h1>
-        <h2>Round <span class="">1</span></h2>
+        <h2>Round <span class="round-span">1</span></h2>
       </header>
       <main>
-        <div class="player-1-div">
-          <h3>Your score</h3>
-          <div class="star-div">
-            <span class="score">0</span>
-          </div>
-          <div class="rps-icon-div">
-            <button class="btn btn-rock">Rock</button>
-            <button class="btn btn-paper">Paper</button>
-            <button class="btn btn-scissors">Scissors</button>
-          </div>
+        <div class="btn-div">
+          <button class="btn btn-rock">Rock</button>
+          <button class="btn btn-paper">Paper</button>
+          <button class="btn btn-scissors">Scissors</button>
         </div>
-        <div class="computer-div">
-          <h3>Computer's score</h3>
-          <div class="star-div">
-            <span class="score">0</span>
+        <div class="scores-div">
+          <div class="player-1-div">
+            <h3>Your score</h3>
+            <div class="score-div">
+              <span class="score human-score">0</span>
+            </div>
+            <div class="show-human-choice">
+              <!-- <img
+                src="img/hand-rock-solid.svg"
+                alt="Hand rock icon"
+                class="rps-icon"
+              /> -->
+            </div>
+          </div>
+          <div class="computer-div">
+            <h3>Computer's score</h3>
+            <div class="score-div">
+              <span class="score computer-score">0</span>
+            </div>
+            <div class="show-computer-choice">
+              <!-- <img
+                src="img/hand-rock-solid.svg"
+                alt="Hand rock icon"
+                class="rps-icon"
+              /> -->
+            </div>
           </div>
         </div>
       </main>
