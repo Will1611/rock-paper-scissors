@@ -21,19 +21,20 @@ body {
   width: 100%;
   z-index: 1;
   position: absolute;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  display: flex;
 }
 
 .overlay-container {
   background-color: #241e47;
   color: azure;
-  max-height: 75%;
+  max-height: 30%;
   max-width: 75%;
-  margin: 30% auto;
+  margin: 10% auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 60px;
   border-radius: 10px;
 }
 
@@ -64,13 +65,9 @@ body {
   justify-content: space-evenly;
 }
 
-.show-choice {
-  background-color: aqua;
-}
-
 .rps-icon {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
 header,
@@ -98,9 +95,12 @@ h3 {
 button {
   padding: 10px 15px;
   border-radius: 5px;
-  border: 1px solid #241e47;
+  border: 2px solid #a58c00;
+  color: #241e47;
   cursor: pointer;
   font-size: 30px;
+  font-weight: 100;
+  background-color: rgb(32, 218, 32);
 }
 
 .score-div {
