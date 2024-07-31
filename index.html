@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Rock Paper Scissors</title>
+    <title>Rock, Paper, Scissors</title>
   </head>
   <body>
     <div class="overlay">
       <div class="overlay-container">
         <h1>Ready to play?</h1>
+        <h3>First to score 5 point wins</h3>
         <button class="btn-overlay">Start game</button>
       </div>
     </div>
@@ -17,6 +18,15 @@
       <div class="overlay-container-new">
         <h1>New game? Are you sure?</h1>
         <button class="btn-overlay-new">Start new game</button>
+      </div>
+    </div>
+    <div class="overlay-win hidden">
+      <div class="overlay-container-win">
+        <h1><span class="overlay-win-span"></span> Play again?</h1>
+        <div class="btn-overlay-win-div">
+          <button class="btn-overlay-win">Start new game</button>
+          <button class="btn-overlay-exit">Exit</button>
+        </div>
       </div>
     </div>
     <div class="container">

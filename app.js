@@ -12,6 +12,11 @@ const btnOverlay = document.querySelector(".btn-overlay");
 const overlayNew = document.querySelector(".overlay-new");
 const btnOverlayNew = document.querySelector(".btn-overlay-new");
 
+const overlayWin = document.querySelector(".overlay-win");
+const btnOverlayWin = document.querySelector(".btn-overlay-win");
+const btnOverlayExit = document.querySelector(`.btn-overlay-exit`);
+const overlayWinSpan = document.querySelector(`.overlay-win-span`);
+
 const btnNew = document.querySelector(".new-game");
 const btnRock = document.querySelector(".btn-rock");
 const btnPaper = document.querySelector(".btn-paper");
@@ -38,6 +43,9 @@ function init() {
   computerScore = 0;
   showHumanScore.textContent = humanScore;
   showComputerScore.textContent = computerScore;
+  // showComputerChoice.removeChild(computerChoice);
+  // showHumanChoice.removeChild(humanChoice);
+  // showWinner.removeChild(winnerH3);
 }
 
 function startGame() {
@@ -90,6 +98,8 @@ function checkWinner(humanChoice, computerChoice) {
     (humanChoice === `scissors` && computerChoice === `paper`)
   ) {
     winner = `human`;
+    humanScore++;
+
     // computer wins
   } else if (
     (humanChoice === `paper` && computerChoice === `scissors`) ||
@@ -97,7 +107,11 @@ function checkWinner(humanChoice, computerChoice) {
     (humanChoice === `rock` && computerChoice === `paper`)
   ) {
     winner = `computer`;
+    computerScore++;
   }
+  // if (humanScore === 5 || computerScore === 5) {
+  //   console.log(`Round over`);
+  // }
   return winner;
 }
 
@@ -116,10 +130,8 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
 
     // Update and show score
     if (roundWinner === `human`) {
-      humanScore++;
       showHumanScore.textContent = humanScore;
     } else if (roundWinner === `computer`) {
-      computerScore++;
       showComputerScore.textContent = computerScore;
     }
 
@@ -140,6 +152,24 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
     showWinner.removeChild(winnerH3);
     btnNew.classList.remove(`hidden`);
   }, 2800);
+
+  if (humanScore === 5 || computerScore === 5) {
+    if (roundWinner === `human`) {
+      overlayWinSpan.textContent = `You win!`;
+    } else if (roundWinner === `computer`) {
+      overlayWinSpan.textContent = `Computer wins!`;
+    }
+    setTimeout(() => {
+      overlayWin.classList.remove("hidden");
+      btnOverlayWin.addEventListener(`click`, () => {
+        overlayWin.classList.add(`hidden`);
+        init();
+      });
+      btnOverlayExit.addEventListener(`click`, () => {
+        window.close();
+      });
+    }, 2850);
+  }
 }
 
 function playRound() {
