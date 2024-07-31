@@ -1,23 +1,18 @@
 "use strict";
 
-// Function declarations are hoisted but function expressions are not.
-
 // Logic variables
 
-let humanScore = 0;
-let computerScore = 0;
-let roundNumber = 1;
-
-let roundWinner;
-
-let humanChoice;
-let computerChoice;
+let humanScore, computerScore, roundWinner, humanChoice, computerChoice;
 
 //DOM elements
 
 const overlay = document.querySelector(".overlay");
 const btnOverlay = document.querySelector(".btn-overlay");
 
+const overlayNew = document.querySelector(".overlay-new");
+const btnOverlayNew = document.querySelector(".btn-overlay-new");
+
+const btnNew = document.querySelector(".new-game");
 const btnRock = document.querySelector(".btn-rock");
 const btnPaper = document.querySelector(".btn-paper");
 const btnScissors = document.querySelector(".btn-scissors");
@@ -37,12 +32,30 @@ const winnerH3 = document.createElement("h3");
 const showRoundNumber = document.querySelector(".round-span");
 
 // Functions
+
+function init() {
+  humanScore = 0;
+  computerScore = 0;
+  showHumanScore.textContent = humanScore;
+  showComputerScore.textContent = computerScore;
+}
+
 function startGame() {
   btnOverlay.addEventListener("click", () => {
     overlay.classList.add("hidden");
     console.log(`Playing round`);
   });
+
+  init();
 }
+
+btnNew.addEventListener(`click`, () => {
+  overlayNew.classList.remove(`hidden`);
+  btnOverlayNew.addEventListener(`click`, () => {
+    overlayNew.classList.add(`hidden`);
+    init();
+  });
+});
 
 function getComputerChoice() {
   let num = Math.floor(Math.random() * 3) + 1;
@@ -87,7 +100,8 @@ function checkWinner(humanChoice, computerChoice) {
   return winner;
 }
 
-function appendInfo(humanChoice, computerChoice, roundWinner, roundNumber) {
+function appendInfo(humanChoice, computerChoice, roundWinner) {
+  btnNew.classList.add(`hidden`);
   //Show human choice
   showHumanChoice.appendChild(humanChoiceImg);
   humanChoiceImg.classList.add("rps-icon");
@@ -118,25 +132,27 @@ function appendInfo(humanChoice, computerChoice, roundWinner, roundNumber) {
       winnerH3.textContent = "It's a tie! ⚔️";
     }
   }, 1000);
+
   setTimeout(() => {
     showHumanChoice.removeChild(humanChoiceImg);
     showComputerChoice.removeChild(computerChoiceImg);
     showWinner.removeChild(winnerH3);
-    roundNumber++;
-    showRoundNumber.textContent = roundNumber;
-  }, 3000);
+    btnNew.classList.remove(`hidden`);
+  }, 2800);
 }
 
 function playRound() {
   btnArr.forEach((button) => {
     button.addEventListener(`click`, (event) => {
+      // Selects alt text in HTML
       humanChoice = event.target.textContent.toLowerCase();
       computerChoice = getComputerChoice();
       roundWinner = checkWinner(humanChoice, computerChoice);
-      appendInfo(humanChoice, computerChoice, roundWinner, roundNumber);
+      appendInfo(humanChoice, computerChoice, roundWinner);
     });
   });
 }
 
+// Run code
 startGame();
 playRound();
