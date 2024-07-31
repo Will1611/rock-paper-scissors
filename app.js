@@ -84,6 +84,7 @@ function checkWinner(humanChoice, computerChoice) {
   ) {
     winner = null;
   } else if (
+    // human wins
     (humanChoice === `rock` && computerChoice === `scissors`) ||
     (humanChoice === `paper` && computerChoice === `rock`) ||
     (humanChoice === `scissors` && computerChoice === `paper`)
@@ -144,7 +145,6 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
 function playRound() {
   btnArr.forEach((button) => {
     button.addEventListener(`click`, (event) => {
-      // Selects alt text in HTML
       humanChoice = event.target.textContent.toLowerCase();
       computerChoice = getComputerChoice();
       roundWinner = checkWinner(humanChoice, computerChoice);
