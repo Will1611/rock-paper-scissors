@@ -19,7 +19,9 @@ const btnOverlayWin = document.querySelector(".btn-overlay-win");
 const btnOverlayExit = document.querySelector(`.btn-overlay-exit`);
 const overlayWinSpan = document.querySelector(`.overlay-win-span`);
 
-const btnNew = document.querySelector(".new-game");
+const btnDivOverlay = document.querySelector(".btn-div-overlay");
+
+const btnPause = document.querySelector(".btn-pause");
 const btnRock = document.querySelector(".btn-rock");
 const btnPaper = document.querySelector(".btn-paper");
 const btnScissors = document.querySelector(".btn-scissors");
@@ -59,7 +61,7 @@ function startGame() {
   init();
 }
 
-btnNew.addEventListener(`click`, () => {
+btnPause.addEventListener(`click`, () => {
   overlayNew.classList.remove(`hidden`);
   btnOverlayNew.addEventListener(`click`, () => {
     overlayNew.classList.add(`hidden`);
@@ -124,7 +126,7 @@ function checkWinner(humanChoice, computerChoice) {
 }
 
 function appendInfo(humanChoice, computerChoice, roundWinner) {
-  btnNew.classList.add(`hidden`);
+  btnPause.classList.add(`hidden`);
   //Show human choice
   showHumanChoice.appendChild(humanChoiceImg);
   humanChoiceImg.classList.add("rps-icon");
@@ -158,7 +160,11 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
     showHumanChoice.removeChild(humanChoiceImg);
     showComputerChoice.removeChild(computerChoiceImg);
     showWinner.removeChild(winnerH3);
-    btnNew.classList.remove(`hidden`);
+    btnPause.classList.remove(`hidden`);
+    btnDivOverlay.classList.add(`hidden`);
+    btnRock.classList.remove(`unclickable`);
+    btnPaper.classList.remove(`unclickable`);
+    btnScissors.classList.remove(`unclickable`);
   }, 2800);
 
   if (humanScore === 5 || computerScore === 5) {
@@ -183,6 +189,10 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
 function playRound() {
   btnArr.forEach((button) => {
     button.addEventListener(`click`, (event) => {
+      btnDivOverlay.classList.remove(`hidden`);
+      btnRock.classList.add(`unclickable`);
+      btnPaper.classList.add(`unclickable`);
+      btnScissors.classList.add(`unclickable`);
       humanChoice = event.target.textContent.toLowerCase();
       computerChoice = getComputerChoice();
       roundWinner = checkWinner(humanChoice, computerChoice);

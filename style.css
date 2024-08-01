@@ -66,6 +66,18 @@ body {
   margin-bottom: 20px;
 }
 
+.btn-div {
+  position: relative;
+  z-index: 0;
+}
+
+.btn-div-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
 .btn-continue {
   margin-bottom: 20px;
 }
@@ -161,11 +173,7 @@ button:hover {
   font-size: 4rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.new-game {
+.btn-pause {
   margin-bottom: 30px;
 }
 
@@ -173,4 +181,13 @@ button:hover {
   margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.unclickable {
+  background-color: #22b422;
+  /* color: #ff0000; */
 }
