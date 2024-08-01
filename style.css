@@ -33,7 +33,7 @@ body {
 .overlay-container-win {
   background-color: #241e47;
   color: azure;
-  max-height: 40%;
+  max-height: 45%;
   max-width: 75%;
   margin: 10% auto 0 auto;
   display: flex;
@@ -60,6 +60,14 @@ body {
   height: 100%;
   margin: 0 auto;
   padding: 70px 0 20px 0;
+}
+
+.btn-overlay-new {
+  margin-bottom: 20px;
+}
+
+.btn-continue {
+  margin-bottom: 20px;
 }
 
 .player-1-div,

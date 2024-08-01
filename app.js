@@ -11,6 +11,8 @@ const btnOverlay = document.querySelector(".btn-overlay");
 
 const overlayNew = document.querySelector(".overlay-new");
 const btnOverlayNew = document.querySelector(".btn-overlay-new");
+const btnContinue = document.querySelector(".btn-continue");
+const btnOverlayNewExit = document.querySelector(".btn-overlay-new-exit");
 
 const overlayWin = document.querySelector(".overlay-win");
 const btnOverlayWin = document.querySelector(".btn-overlay-win");
@@ -62,6 +64,12 @@ btnNew.addEventListener(`click`, () => {
   btnOverlayNew.addEventListener(`click`, () => {
     overlayNew.classList.add(`hidden`);
     init();
+  });
+  btnContinue.addEventListener(`click`, () => {
+    overlayNew.classList.add(`hidden`);
+  });
+  btnOverlayNewExit.addEventListener(`click`, () => {
+    window.close();
   });
 });
 
