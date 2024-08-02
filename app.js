@@ -13,9 +13,7 @@ const overlayWin = document.querySelector(".overlay-win");
 const btnOverlay = document.querySelector(".btn-overlay");
 const btnOverlayNew = document.querySelector(".btn-overlay-new");
 const btnContinue = document.querySelector(".btn-continue");
-const btnOverlayNewExit = document.querySelector(".btn-overlay-new-exit");
 const btnOverlayWin = document.querySelector(".btn-overlay-win");
-const btnOverlayExit = document.querySelector(`.btn-overlay-exit`);
 const overlayWinSpan = document.querySelector(`.overlay-win-span`);
 const btnDivOverlay = document.querySelector(".btn-div-overlay");
 
@@ -64,9 +62,6 @@ btnPause.addEventListener(`click`, () => {
   });
   btnContinue.addEventListener(`click`, () => {
     overlayNew.classList.add(`hidden`);
-  });
-  btnOverlayNewExit.addEventListener(`click`, () => {
-    window.close();
   });
   overlayNew.addEventListener(`click`, () => {
     overlayNew.classList.add(`hidden`);
@@ -180,9 +175,6 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
       btnOverlayWin.addEventListener(`click`, () => {
         overlayWin.classList.add(`hidden`);
         init();
-      });
-      btnOverlayExit.addEventListener(`click`, () => {
-        window.close();
       });
     }, 2850);
   }
