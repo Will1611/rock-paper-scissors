@@ -26,6 +26,7 @@ body {
   position: absolute;
   backdrop-filter: blur(10px);
   display: flex;
+  justify-content: center;
 }
 
 .overlay-container,

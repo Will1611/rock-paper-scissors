@@ -47,9 +47,10 @@ function init() {
   computerScore = 0;
   showHumanScore.textContent = humanScore;
   showComputerScore.textContent = computerScore;
-  // showComputerChoice.removeChild(computerChoice);
-  // showHumanChoice.removeChild(humanChoice);
-  // showWinner.removeChild(winnerH3);
+
+  humanChoice = "";
+  computerChoice = "";
+  roundWinner = "";
 }
 
 function startGame() {
@@ -72,6 +73,9 @@ btnPause.addEventListener(`click`, () => {
   });
   btnOverlayNewExit.addEventListener(`click`, () => {
     window.close();
+  });
+  overlayNew.addEventListener(`click`, () => {
+    overlayNew.classList.add(`hidden`);
   });
 });
 
@@ -175,6 +179,10 @@ function appendInfo(humanChoice, computerChoice, roundWinner) {
     }
     setTimeout(() => {
       overlayWin.classList.remove("hidden");
+      overlayWin.addEventListener(`click`, () => {
+        overlayWin.classList.add(`hidden`);
+        init();
+      });
       btnOverlayWin.addEventListener(`click`, () => {
         overlayWin.classList.add(`hidden`);
         init();
