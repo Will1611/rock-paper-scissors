@@ -7,18 +7,16 @@ let humanScore, computerScore, roundWinner, humanChoice, computerChoice;
 //DOM elements
 
 const overlay = document.querySelector(".overlay");
-const btnOverlay = document.querySelector(".btn-overlay");
-
 const overlayNew = document.querySelector(".overlay-new");
+const overlayWin = document.querySelector(".overlay-win");
+
+const btnOverlay = document.querySelector(".btn-overlay");
 const btnOverlayNew = document.querySelector(".btn-overlay-new");
 const btnContinue = document.querySelector(".btn-continue");
 const btnOverlayNewExit = document.querySelector(".btn-overlay-new-exit");
-
-const overlayWin = document.querySelector(".overlay-win");
 const btnOverlayWin = document.querySelector(".btn-overlay-win");
 const btnOverlayExit = document.querySelector(`.btn-overlay-exit`);
 const overlayWinSpan = document.querySelector(`.overlay-win-span`);
-
 const btnDivOverlay = document.querySelector(".btn-div-overlay");
 
 const btnPause = document.querySelector(".btn-pause");
@@ -38,8 +36,6 @@ const computerChoiceImg = document.createElement("img");
 const showWinner = document.querySelector(".show-winner");
 const winnerH3 = document.createElement("h3");
 
-const showRoundNumber = document.querySelector(".round-span");
-
 // Functions
 
 function init() {
@@ -56,9 +52,7 @@ function init() {
 function startGame() {
   btnOverlay.addEventListener("click", () => {
     overlay.classList.add("hidden");
-    console.log(`Playing round`);
   });
-
   init();
 }
 
